@@ -105,7 +105,7 @@
 
 
 
-      function auth(){
+      function initPlayer(){
         vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
           console.log(_info);
           gameInstance.SendMessage('VKSDK', 'AuthenticateSuccess', JSON.stringify(_info));
