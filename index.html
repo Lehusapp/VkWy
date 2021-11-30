@@ -110,6 +110,9 @@
           console.log(_info);
           gameInstance.SendMessage('VKSDK', 'AuthenticateSuccess', JSON.stringify(_info));
         });
+        vkBridge.send("VKWebAppShowInviteBox", {})
+         .then(data => console.log(data.success))
+        .catch(error => console.log(error));
       }
 
       function getUserData(){
