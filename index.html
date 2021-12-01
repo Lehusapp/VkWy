@@ -110,11 +110,14 @@
           console.log(_info);
           gameInstance.SendMessage('VKSDK', 'AuthenticateSuccess', JSON.stringify(_info));
         });
-        vkBridge.send("VKWebAppShowInviteBox", {})
-         .then(data => console.log(data.success+"Ага"))
+      }
+ 
+      function getFriends{
+      vkBridge.send("VKWebAppShowInviteBox", {})
+         .then(data => console.log("InviteBox Get "data.success))
         .catch(error => console.log(error));
       }
-
+      
       function getUserData(){
         vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then(data =>{
         console.log(data);
