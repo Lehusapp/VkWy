@@ -114,7 +114,7 @@
  
       function getFriends(){
       vkBridge.send("VKWebAppShowInviteBox", {})
-         .then(data => console.log("InviteBox Get "data.success))
+         .then(data => console.log(data.success))
         .catch(error => console.log(error));
       }
       
