@@ -122,18 +122,7 @@
         vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then(data =>{
         console.log(data);
         gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(data));
-        }});
-  }
-
-  if (type === 'VKWebAppStorageGetFailed') {
-    // Catching the error
-    console.log(data.error_type, data.error_data);
-  }
-});
-        
-        
-        
- 
+      });}
 
       function setUserData(data){
         console.log(data);
