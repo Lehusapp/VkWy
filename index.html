@@ -119,9 +119,9 @@
       }
       
       function getUserData(){
-        vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then(data =>{
+        vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then(if(data.value == string){data =>{
         console.log(data);
-        gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(data));
+        gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(data));}
       });}
 
       function setUserData(data){
