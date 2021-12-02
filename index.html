@@ -126,7 +126,7 @@
             gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].value));
           }
           if(e.detail.type == 'VKWebAppStorageGetFailed') {
-            ss.SendMessage(gameObject, method, 'error');
+             gameInstance.SendMessage('VKSDK', 'DataGetting', 'error');
           }  
         });}
           
