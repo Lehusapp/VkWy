@@ -121,7 +121,6 @@
       function getUserData(){
         vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then(data =>{
         console.log(data);
-        console.log(ничего не работает!);  
         gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(data));
         });}
 
