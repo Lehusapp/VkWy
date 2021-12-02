@@ -122,7 +122,7 @@
         vkBridge.send("VKWebAppStorageGet",{"keys":[_save]})
         vkBridge.subscribe((e) => {
           if(e.detail.type == 'VKWebAppStorageGetResult') {
-            gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].value));
+            gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].data));
           }
           if(e.detail.type == 'VKWebAppStorageGetFailed') {
              gameInstance.SendMessage('VKSDK', 'DataGetting', 'error');
