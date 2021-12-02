@@ -119,11 +119,10 @@
       }
       
       function getUserData(){
-        vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then({data  =>{
+        vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then(data =>{
         console.log(data);
         gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(data));
-        console.log("загружено")
-        });}
+      });}
 
       function setUserData(data){
         console.log(data);
@@ -172,4 +171,3 @@
   </script>
 
 </html>
-
