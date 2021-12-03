@@ -123,7 +123,7 @@
         vkBridge.subscribe((e) => {
           if(e.detail.type == 'VKWebAppStorageGetResult') {
              if(e.detail.data.keys[0] === undefined){
-              console.log("No data");}else{gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].value));}
+              console.log("No data");}else{gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].data));}
           }
           if(e.detail.type == 'VKWebAppStorageGetFailed') {
              gameInstance.SendMessage('VKSDK', 'DataGetting', 'error');
@@ -132,9 +132,9 @@
                
       function setUserData(data){
         console.log(data);
-        vkBridge.send('VKWebAppStorageSet',{"key": "_save" , "value": value}).then(_info =>{
+        vkBridge.send('VKWebAppStorageSet',{"key": "_save" , "value": data}).then(_info =>{
           console.log("Saved!")});
-         //if (data=560){secure.addAppEvent(user_id,activity_id=2,value=560); console.log(user_id+"+560")}
+         //if (data==560){secure.addAppEvent(user_id,activity_id=3,value=560); console.log(user_id+"+560")}
       }
 
       function showFullscrenAd(){
