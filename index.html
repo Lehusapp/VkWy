@@ -121,7 +121,7 @@
       function getUserData(_save,VKSDK,DataGetting){
         vkBridge.send("VKWebAppStorageGet",{"keys":[_save]})
         vkBridge.subscribe((e) => {
-          if(e.detail.type == 'VKWebAppStorageGetResult',{"keys":[_save]}) {
+          if(e.detail.type == 'VKWebAppStorageGetResult'}) {
           //   if(e.detail.data.keys[0] == null){
               /*console.log("No data");}else{*/gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].data));//}
        //   }
