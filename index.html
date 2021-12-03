@@ -119,7 +119,7 @@
       }
       
       function getUserData(_save,VKSDK,DataGetting){
-        vkBridge.send("VKWebAppStorageGet",{"keys":[_save]})
+        vkBridge.send("VKWebAppStorageGet",{"keys":[_save]});
         vkBridge.subscribe((e) => {
           if(e.detail.type == 'VKWebAppStorageGetResult'}) {
             gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].data));
