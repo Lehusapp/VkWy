@@ -122,11 +122,10 @@
         vkBridge.send("VKWebAppStorageGet",{"keys":[_save]})
         vkBridge.subscribe((e) => {
           if(e.detail.type == 'VKWebAppStorageGetResult'}) {
-          //   if(e.detail.data.keys[0] == null){
-              /*console.log("No data");}else{*/gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].data));//}
-       //   }
+            gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].data));
+          }
           if(e.detail.type == 'VKWebAppStorageGetFailed') {
-             gameInstance.SendMessage('VKSDK', 'DataGetting', 'error');
+             console.log("No data");
           }  
         });}
                
