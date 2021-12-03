@@ -119,11 +119,11 @@
       }
       
       function getUserData(_save,VKSDK,DataGetting){
-        const bridge = vkBridge.default;
         vkBridge.send("VKWebAppStorageGet",{"keys":[_save]})
         vkBridge.subscribe((e) => {
           if(e.detail.type == 'VKWebAppStorageGetResult') {
-            gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].value));
+             if(e.detail.data.keys[0].value==undefined){
+              console.log("No data");}else{gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].value));}
           }
           if(e.detail.type == 'VKWebAppStorageGetFailed') {
              gameInstance.SendMessage('VKSDK', 'DataGetting', 'error');
