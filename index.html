@@ -129,15 +129,10 @@
              gameInstance.SendMessage('VKSDK', 'DataGetting', 'error');
           }  
         });}
-          
-        //  .then(data =>{
-       // console.log(data.status);
-       // gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(data));
-     // });}
-
+               
       function setUserData(data){
         console.log(data);
-        vkBridge.send('VKWebAppStorageSet',{"key": _save , "value": value}).then(_info =>{
+        vkBridge.send('VKWebAppStorageSet',{"key": "_save" , "value": value}).then(_info =>{
           console.log("Saved!")});
          //if (data=560){secure.addAppEvent(user_id,activity_id=2,value=560); console.log(user_id+"+560")}
       }
