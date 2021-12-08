@@ -119,17 +119,11 @@
       }
       
       function getUserData(_save,VKSDK,DataGetting){
-        vkBridge.send("VKWebAppStorageGet",{"keys":[_save]});
-        vkBridge.subscribe((e) => {
-          if(e.detail.type == 'VKWebAppStorageGetResult'){
-        
-              gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(e.detail.data.keys[0].data));
-             console.log(e.detail.data.keys[0]);
-          }
-          if(e.detail.type == 'VKWebAppStorageGetFailed') {
-             console.log("No data");
-          }  
-        });}
+       vkBridge.send("VKWebAppStorageGet",{"keys":["_save"]}).then(data =>{
+        console.log(data);
+         gameInstance.SendMessage('VKSDK', 'DataGetting', JSON.stringify(data));
+      });}
+
                
       function setUserData(data){
         console.log(data);
